@@ -39,3 +39,12 @@ auto decompressGrayscale(std::vector<std::pair<uint8_t, uint8_t>>& compressed_bi
 
     return decompression;
 }
+
+auto printMap(std::array<std::array<uint8_t, width>, height>& bitmap) -> void {
+    for (const auto& row : bitmap) {
+        for (const auto pixel : row) {
+            std::cout << pixel;
+        }
+        std::cout << "\n";
+    }
+}

@@ -10,3 +10,5 @@ constexpr size_t height = 32;
 auto compressGrayscale(std::array<std::array<uint8_t, width>, height>& bitmap) -> std::vector<std::pair<uint8_t, uint8_t>>;
 
 auto decompressGrayscale(std::vector<std::pair<uint8_t, uint8_t>>& compressed_bitmap) -> std::array<std::array<uint8_t, width>, height>;
+
+auto printMap(std::array<std::array<uint8_t, width>, height>& bitmap) -> void;
