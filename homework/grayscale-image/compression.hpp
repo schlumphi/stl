@@ -4,6 +4,9 @@
 #include <utility>
 #include <vector>
 
-auto compressGrayscale(std::array<std::array<uint8_t, 32>, 32>& data) -> std::vector<std::pair<uint8_t, uint8_t>>;
+constexpr size_t width = 32;
+constexpr size_t height = 32;
 
-auto decompressGrayscale(std::vector<std::pair<uint8_t, uint8_t>>& data) -> std::array<std::array<uint8_t, 32>, 32>;
+auto compressGrayscale(std::array<std::array<uint8_t, width>, height>& bitmap) -> std::vector<std::pair<uint8_t, uint8_t>>;
+
+auto decompressGrayscale(std::vector<std::pair<uint8_t, uint8_t>>& compressed_bitmap) -> std::array<std::array<uint8_t, width>, height>;
