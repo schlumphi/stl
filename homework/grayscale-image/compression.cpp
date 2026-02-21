@@ -48,3 +48,24 @@ auto printMap(std::array<std::array<uint8_t, width>, height>& bitmap) -> void {
         std::cout << "\n";
     }
 }
+
+auto gen_bitmap(const size_t fraction) -> std::array<std::array<uint8_t, width>, height> {
+    if (fraction == 0) {
+        throw std::invalid_argument("gen_bitmap: expected positive 'fraction' num.");
+    }
+    std::array<std::array<uint8_t, width>, height> bitmap{0};
+
+    std::vector<int> values(fraction);
+    int curr_val = 0;
+    for (auto& value : values) {
+        value = curr_val++;
+    }
+
+    for (auto& row : bitmap) {
+        auto it = row.begin();
+        for (const auto val : values) {
+            it = std::fill_n(it, width / values.size() + (width % values.size() != 0), val);
+        }
+    }
+    return bitmap;
+}
