@@ -11,6 +11,6 @@ auto compressGrayscale(std::array<std::array<uint8_t, width>, height>& bitmap) -
 
 auto decompressGrayscale(std::vector<std::pair<uint8_t, uint8_t>>& compressed_bitmap) -> std::array<std::array<uint8_t, width>, height>;
 
-auto printMap(std::array<std::array<uint8_t, width>, height>& bitmap) -> void;
+auto printMap(const std::array<std::array<uint8_t, width>, height>& bitmap) -> void;
 
 auto gen_bitmap(const size_t fraction) -> std::array<std::array<uint8_t, width>, height>;
