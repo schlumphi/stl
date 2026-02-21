@@ -58,6 +58,30 @@ TEST(compressionTests, ShouldCompressOneEighthLines) {
     expectBitmap(bitmap, 8);
 }
 
+TEST(compressionTests, ShouldCompressOneSixteenthLines) {
+    auto arr = gen_bitmap(16);
+
+    auto bitmap = compressGrayscale(arr);
+    ASSERT_EQ(bitmap.size(), height * 16);
+    expectBitmap(bitmap, 16);
+}
+
+TEST(compressionTests, ShouldCompressOneThirtySecondLines) {
+    auto arr = gen_bitmap(32);
+
+    auto bitmap = compressGrayscale(arr);
+    ASSERT_EQ(bitmap.size(), height * 32);
+    expectBitmap(bitmap, 32);
+}
+
+TEST(compressionTests, ShouldCompressOneSixtyFourthLines) {
+    auto arr = gen_bitmap(64);
+
+    auto bitmap = compressGrayscale(arr);
+    ASSERT_EQ(bitmap.size(), height * 64);
+    expectBitmap(bitmap, 64);
+}
+
 TEST(compressionTests, ShouldDecompressWholeLines) {
     constexpr size_t fraction = 1;
     auto bitmap = getBitmap(fraction);
